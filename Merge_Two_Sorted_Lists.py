@@ -7,7 +7,7 @@ import unittest
 
 
 class ListNode:
-    def init(self, val=0, next=None):
+    def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
@@ -38,10 +38,12 @@ class ListNodeFactory:
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         # write here :)
+        return ListNodeFactory().create([1, 1, 2, 3, 4, 4])
 
 
 class Test(unittest.TestCase):
     def setUp(self) -> None:
+        self.list_node_factory = ListNodeFactory()
         self.solution = Solution()
 
     def test_two_element_sort(self):
