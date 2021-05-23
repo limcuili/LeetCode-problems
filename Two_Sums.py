@@ -5,6 +5,7 @@ Test with: python -m unittest Two_Sums.py
 
 import unittest
 
+
 class Solution:
     def two_sum_1(self, nums: list[int], target: int) -> list[int]:
         for i, numi in enumerate(nums):
@@ -21,23 +22,14 @@ class Solution:
             else:
                 return [done[remainder], i]
 
-    def twoSum(self, nums: list[int], target:int) -> list[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # hook in whichever function you want.
         return self.two_sum_1(nums, target)
 
 
-class Solution2:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
-        done = {}
-        for i, num in enumerate(nums):
-            remainder = target - num
-            if remainder not in done:
-                done[num] = i
-            else:
-                return [done[remainder], i]
-
 class Test(unittest.TestCase):
     def setUp(self) -> None:
-        self.solution = Solution2()
+        self.solution = Solution()
 
     def test_returns_two_indices_as_list(self):
         nums = [2, 7, 11, 15]
@@ -52,6 +44,7 @@ class Test(unittest.TestCase):
         expected_answer = [1, 2]
         answer = self.solution.twoSum(nums, target)
         self.assertEqual(expected_answer, answer)
+
 
 if __name__ == 'main':
     unittest.main()
