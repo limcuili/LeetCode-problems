@@ -38,11 +38,6 @@ class ListNodeFactory:
 
         return output_list
 
-# # to forward a node
-# node = node.next
-# to loop
-# while node is not None:
-#     node = node.next
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
@@ -57,14 +52,8 @@ class Solution:
                 head.next = l2
                 head = head.next
                 l2 = l2.next
-        if l1:
-            head.next = l1
-            head = head.next
-            l1 = l1.next
-        elif l2:
-            head.next = l2
-            head = head.next
-            l2 = l2.next
+        head.next = l1 or l2
+
         return merged_list.next
 
 
