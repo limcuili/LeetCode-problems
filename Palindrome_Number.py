@@ -7,11 +7,24 @@ import unittest
 
 
 class Solution:
+    def isPalindrome1(self, x: int) -> bool:
+        reversed_string = str(x)[::-1]
+        return str(x) == reversed_string
+
+    def isPalindrome2(self, x: int) -> bool:
+        left_pointer = 0
+        right_pointer = len(str(x)) - 1
+        while left_pointer < right_pointer:
+            if str(x)[left_pointer] != str(x)[right_pointer]:
+                return False
+            else:
+                left_pointer += 1
+                right_pointer -= 1
+        return True
+
     def isPalindrome(self, x: int) -> bool:
-        if x == 121:
-            return True
-        elif x == -121 or 10:
-            return False
+        # hook in whichever of the above implementation you want.
+        return self.isPalindrome2(x)
 
 
 class Test(unittest.TestCase):
