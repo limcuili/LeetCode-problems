@@ -12,11 +12,11 @@ class Solution:
         stack = []
         for character in s:
             if character in parentheses_pairs:
-                try:
+                if stack and parentheses_pairs[character] == stack[-1]:
                     top = stack.pop()
                     if parentheses_pairs[character] != top:
                         return False
-                except:
+                else:
                     return False
             else:
                 stack.append(character)
