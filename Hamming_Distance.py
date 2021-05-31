@@ -14,7 +14,7 @@ class Solution:
         return len(differences)
 
     def hammingDistance2(self, x: int, y: int) -> int:
-        # TODO: implement with bitwise operations
+        # TODO: implement with bitwise operations.
         return None
 
     def hammingDistance(self, x: int, y: int) -> int:
