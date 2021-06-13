@@ -32,10 +32,44 @@ class TreeFactory:
 
 
 class Solution:
-    def maxDepth(self, root: TreeNode) -> int:
-        if root == None:
+    def maxDepth1(self, root: TreeNode) -> int:
+        if root is None:
             return 0
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+    def maxDepth2(self, root: TreeNode) -> int:
+        # DFS implementation
+        if root is None:
+            return 0
+
+        max_depth = 1
+        node_stack = [root]
+        levels = [1]
+
+        while node_stack:
+            current_node = node_stack.pop()
+            level = levels.pop()
+
+            if current_node.left is None and current_node.right is None:
+                max_depth = max(max_depth, level)
+
+            if current_node.right is not None:
+                node_stack.append(current_node.right)
+                levels.append(level + 1)
+
+            if current_node.left is not None:
+                node_stack.append(current_node.left)
+                levels.append(level + 1)
+
+        return max_depth
+
+    def maxDepth3(self, root: TreeNode) -> int:
+        # TODO: BFS queue
         return None
+
+    def maxDepth(self, root: TreeNode) -> int:
+        # hook in whichever of the above implementation you want.
+        return self.maxDepth2(root)
 
 
 class Test(unittest.TestCase):
