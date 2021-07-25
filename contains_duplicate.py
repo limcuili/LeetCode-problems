@@ -8,9 +8,17 @@ from typing import List
 
 
 class Solution:
-    class Solution:
-        def containsDuplicate(self, nums: List[int]) -> bool:
-            pass
+    def containsDuplicate1(self, nums: List[int]) -> bool:
+        # Quadratic time solution
+        duplicates_seen = [x for i, x in enumerate(nums) if x in nums[:i]]
+        return bool(duplicates_seen)
+
+    def containsDuplicate2(self, nums: List[int]) -> bool:
+        return len(nums) != len(set(nums))
+
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        # hook in whichever function you want.
+        return self.containsDuplicate2(nums)
 
 
 class Test(unittest.TestCase):
