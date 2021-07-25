@@ -11,7 +11,12 @@ from typing import List
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        pass
+        min_price = max(prices) # if you want to remove the complexity required for max(), you could set sys.maxsize
+        profit = 0
+        for price in prices:
+            if price < min_price: min_price = price
+            if price - min_price > profit: profit = price - min_price
+        return profit
 
 
 class Test(unittest.TestCase):
