@@ -1,6 +1,6 @@
-""" Same Tree
-Given the roots of two binary trees p and q, write a function to check if they are the same or not.
-Test with: python -m unittest Same_Tree.py
+""" Symmetric Tree
+Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+Test with: python -m unittest symmetric_tree.py
 """
 
 import unittest
@@ -31,14 +31,22 @@ class TreeFactory:
 
 
 class Solution:
-    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-        if not p and not q:
+    def isMirrored(self, left, right):
+        if left is None and right is None:
             return True
-        if not q or not p:
+        if left is None or right is None:
             return False
-        if p.val != q.val:
+        if left.val == right.val:
+            outward_pair = self.isMirrored(left.left, right.right)
+            inward_pair = self.isMirrored(left.right, right.left)
+            return outward_pair and inward_pair
+        else:
             return False
-        return self.isSameTree(p.right, q.right) and self.isSameTree(p.left, q.left)
+
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root:
+            return True
+        return self.isMirrored(root.left, root.right)
 
 
 class Test(unittest.TestCase):
@@ -47,9 +55,8 @@ class Test(unittest.TestCase):
         self.solution = Solution()
 
     def test_equivalent_tree(self):
-        p = self.tree_factory.create([1, 2, 3])
-        q = self.tree_factory.create([1, 2, 3])
-        answer = self.solution.isSameTree(p, q)
+        root = self.tree_factory.create([1,2,2,3,4,4,3])
+        answer = self.solution.isSymmetric(root)
         self.assertTrue(answer)
 
 

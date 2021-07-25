@@ -1,6 +1,6 @@
 """ Valid Parentheses
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-Test with: python -m unittest Valid_Parentheses.py
+Test with: python -m unittest valid_parentheses.py
 """
 
 import unittest

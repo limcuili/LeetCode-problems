@@ -1,6 +1,6 @@
 """ Palindrome Number
 Given an integer x, return true if x is palindrome integer.
-Test with: python -m unittest Palindrome_Number.py
+Test with: python -m unittest palindrome_number.py
 """
 
 import unittest

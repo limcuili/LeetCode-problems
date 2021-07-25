@@ -1,6 +1,6 @@
 """ Maximum Depth of Binary Tree
 Given the root of a binary tree, return its maximum depth.
-Test with: python -m unittest Maximum_Depth_of_Binary_Tree.py
+Test with: python -m unittest maximum_depth_of_binary_tree.py
 """
 
 import unittest

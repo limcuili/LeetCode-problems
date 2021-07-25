@@ -1,6 +1,6 @@
 """ Merge Two Sorted Lists
 Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists.
-Test with: python -m unittest Merge_Two_Sorted_Lists.py
+Test with: python -m unittest merge_two_sorted_lists.py
 """
 
 import unittest

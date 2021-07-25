@@ -1,6 +1,6 @@
 """ Two Sums
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-Test with: python -m unittest Two_Sums.py
+Test with: python -m unittest two_sums.py
 """
 
 import unittest

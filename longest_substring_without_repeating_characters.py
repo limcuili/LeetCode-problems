@@ -1,6 +1,6 @@
 """ Longest Substring Without Repeating Characters
 Given a string s, find the length of the longest substring without repeating characters.
-Test with: python -m unittest Longest_Substring_Without_Repeating_Characters.py
+Test with: python -m unittest longest_substring_without_repeating_characters.py
 """
 
 import unittest

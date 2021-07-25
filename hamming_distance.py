@@ -1,6 +1,6 @@
 """ Hamming Distance
 The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
-Test with: python -m unittest Hamming_Distance.py
+Test with: python -m unittest hamming_distance.py
 """
 
 import unittest
